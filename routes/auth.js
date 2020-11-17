@@ -7,6 +7,10 @@ const jwt = require('jsonwebtoken')
 const {JWT_SECRET} = require('../keys')
 const requireLogin = require('../middleware/requireLogin')
 
+router.get('/',(req,res)=>{
+    res.send("Hello Friends");
+})
+
 // protected verifies whether user has logged in or not if not then it is not allowded to access the page
 // this response uses requirelogin middleware for verifying if user has signed in or not.
 router.get('/protected',requireLogin,(req,res)=>{
